@@ -12,7 +12,21 @@
         <h3 data-bind="text: promoteCat"></h3>
         <div data-bind="text: clickCount"></div>
         <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
+        <!-- <ul data-bind="foreach: nickNames">
+            <li>
+                The current item is: <b data-bind="text: $data.months"></b>
+            </li>
+        </ul> -->
 
+        <table>
+            <thead><tr>
+                <th>Nickname</th>
+            </tr></thead>
+            <!-- Todo: Generate table body -->
+            <tbody data-bind="foreach: nickNames">
+                <td data-bind="text: name"></td>
+            </tbody>
+        </table>
     </div>
     <script src="js/lib/knockout-3.2.0.js"></script>
     <script src="js/app.js"></script>
