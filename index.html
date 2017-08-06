@@ -6,25 +6,20 @@
 </head>
 <body>
     <ul id="cat-list"></ul>
-    <div id="cat">
+    <div id="cat" data-bind="with: $root.currentCat()">
 
         <h2 data-bind="text: name"></h2>
         <h3 data-bind="text: promoteCat"></h3>
         <div data-bind="text: clickCount"></div>
         <img src="" alt="cute cat" data-bind="click: incrementCounter, attr: {src: imgSrc}">
-        <!-- <ul data-bind="foreach: nickNames">
-            <li>
-                The current item is: <b data-bind="text: $data.months"></b>
-            </li>
-        </ul> -->
 
         <table>
             <thead><tr>
-                <th>Nickname</th>
+                <th>Nicknames</th><th>ID number</th>
             </tr></thead>
-            <!-- Todo: Generate table body -->
             <tbody data-bind="foreach: nickNames">
-                <td data-bind="text: name"></td>
+                <td data-bind="text: $data.name"></td>
+                <td data-bind="text: $data.id"></td>
             </tbody>
         </table>
     </div>
